@@ -3,13 +3,13 @@ import subprocess
 import re
 import os.path
 import datetime
-import configparser
+from configparser import ConfigParser,ExtendedInterpolation
 from UtilFunctions import get_script_path
 
 basepath = get_script_path()
 if __name__ == "__main__":
     configFile = basepath + '/config/default.ini'
-    config = configparser.ConfigParser()
+    config = ConfigParser(interpolation=ExtendedInterpolation())
     config.read(configFile)
     targetAddress = None
     upgradeCache = None
