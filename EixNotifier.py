@@ -38,6 +38,6 @@ if __name__ == "__main__":
             fh = open(upgradeCache, "w")
             fh.write(upgradeList)
             fh.close()
-            cmd = "/bin/mail -s \"" + subjectLine + "\" "
+            cmd = "/usr/bin/mail -s \"" + subjectLine + "\" "
             cmd += targetAddress + " < " + upgradeCache
             subprocess.run(cmd, shell=True)
